@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Electron tutorial app - ipc</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<p>Neues Projekt erstellen</p>
+            </ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div>
+        <section class="wrapper style1 fullscreen intro">
+          <div class="inner">
+            <h1>Ein neues Projekt erstellen</h1>
+						<p>Wir benötigen noch ein paar Informationen zu deinem Projekt, bevor wir es erstellen können. </p>
+						<section>
+			        <form method="post" action="#">
+			          <div class="field">
+			            <label for="name">Name</label>
+			            <input type="text" name="name" id="name" />
+			          </div>
+								<div class="field">
+			            <label for="name">Projektpfad</label>
+			            <input type="text" name="name" id="name" />
+			          </div>
+			        </form>
+			      </section>
+            <ul class="actions">
+							<li><a class="button">Create Project</a></li>
+              <li><a href="#one" id="close-me-button" class="button scrolly">Close me</a></li>
+            </ul>
+          </div>
+        </section>
+			</div>
+		<!-- Scripts -->
+      <script>window.$ = window.jQuery = require('../assets/js/jquery.min.js');</script>
+			<script>window.i18n = new(require('../translations/i18n'));</script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/skel.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+      <script>
+				require('../assets/js/translations')
+				require('../assets/js/ipc')
+      </script>
+	</body>
+</html>
