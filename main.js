@@ -35,6 +35,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   mainWindow.loadURL('file://' + __dirname + '/index.ejs');
+  mainWindow.webContents.openDevTools();
 
   // Open the DevTools.
   //mainWindow.webContents.openDevTools()
@@ -65,6 +66,7 @@ function createWindow () {
   })
 
   secondWindow.loadURL(`file://${__dirname}/windows/createNewProject.html`)
+  secondWindow.webContents.openDevTools();
 
   require('./menu/mainmenu')
 }

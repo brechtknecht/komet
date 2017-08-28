@@ -56,13 +56,13 @@
 
 	h1, h2, h3, h4, h5, h6 {
 		-webkit-user-select: none;
-		color: _palette(fg-bold);
+		color: #5a5a5a;
 		font-weight: _font(weight-bold);
 		line-height: 1.5;
 		margin: 0 0 (_size(element-margin) * 0.25) 0;
 
 		a {
-			color: inherit;
+			color: #5a5a5a;
 			text-decoration: none;
 		}
 	}
