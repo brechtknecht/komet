@@ -1280,8 +1280,9 @@ input {
   height: 2.3em !important;
   font-size: 1.3em !important;
   font-weight: 100 !important;
-  letter-spacing: 0.05em !important;
-  text-align: left !important; }
+  letter-spacing: 0.01em !important;
+  text-align: left !important;
+  text-transform: none !important; }
 
 /* Type */
 body, input, select, textarea {
