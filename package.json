@@ -43,9 +43,11 @@
     "ejs-electron": "^2.0.1",
     "electron": "^1.7.5",
     "electron-ejs": "^1.1.1",
+    "electron-router": "^0.4.1",
     "express": "^4.15.4",
     "firebase": "^4.3.0",
     "glob": "^7.1.2",
+    "jquery": "^3.2.1",
     "mustache": "^2.3.0",
     "twig": "^1.10.5"
   }
