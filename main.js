@@ -69,6 +69,7 @@ function createWindow () {
   })
 
   secondWindow.loadURL(`file://${__dirname}/windows/createNewProject.html`)
+  secondWindow.webContents.openDevTools();
 
   require('./menu/mainmenu')
 }
