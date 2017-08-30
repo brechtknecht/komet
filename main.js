@@ -21,6 +21,9 @@ const BrowserWindow = electron.BrowserWindow
 let mainWindow
 let secondWindow
 
+
+ejse.data('username', 'Some Guy')
+
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({titleBarStyle: 'hidden',
@@ -36,9 +39,6 @@ function createWindow () {
   // and load the index.html of the app.
   mainWindow.loadURL('file://' + __dirname + '/index.ejs');
   mainWindow.webContents.openDevTools();
-
-  // Open the DevTools.
-  //mainWindow.webContents.openDevTools()
 
 
   // Show the mainwindow when it is loaded and ready to show
