@@ -1,23 +1,31 @@
-const electron = require('electron')
-const ejse = require('ejs-electron')
-const BrowserWindow = electron.BrowserWindow
-const app = electron.app
-const {ipcMain} = require('electron')
+// Basic Dependencies
+const electron = require('electron');
 var path = require('path');
-const firebaseDatabase = require('./server/database');
-const setupEvents = require('./installers/setupEvents')
+const BrowserWindow = electron.BrowserWindow;
+const app = electron.app;
+const {ipcMain} = require('electron');
+const setupEvents = require('./installers/setupEvents');
 if (setupEvents.handleSquirrelEvent()) {
   // squirrel event handled and app will exit in 1000ms, so don't do anything else
   return;
 }
+
+// Development Dependencies
+require('electron-reload')(__dirname);
+
+// Template Dependencies
+const ejse = require('ejs-electron');
+var Twig = require('twig'); // Twig module
+twig = Twig.twig; // render function
+
+// Database Dependencies
+const firebaseDatabase = require('./server/database');
 
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 let secondWindow
-
-ejse.data({username: 'fuck'});
 
 function createWindow () {
   // Create the browser window.
@@ -77,7 +85,9 @@ ipcMain.on('close-second-window', (event, arg)=> {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.on('ready', createWindow, function(){
+  console.log('App is ready');
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -95,6 +105,7 @@ app.on('activate', function () {
     createWindow()
   }
 })
+
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
