@@ -1,20 +1,16 @@
-//handle setupevents as quickly as possible
+const electron = require('electron')
+const ejse = require('ejs-electron')
+const BrowserWindow = electron.BrowserWindow
+const app = electron.app
+const {ipcMain} = require('electron')
+var path = require('path');
+const firebaseDatabase = require('./server/database');
 const setupEvents = require('./installers/setupEvents')
 if (setupEvents.handleSquirrelEvent()) {
   // squirrel event handled and app will exit in 1000ms, so don't do anything else
   return;
 }
 
-const electron = require('electron')
-const ejse = require('ejs-electron')
-// Module to control application life.
-const app = electron.app
-const {ipcMain} = require('electron')
-var path = require('path')
-
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
-//Adds the main Menu to our app
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -22,7 +18,6 @@ let mainWindow
 let secondWindow
 
 ejse.data({username: 'fuck'});
-ejse.data({username: 'off'});
 
 function createWindow () {
   // Create the browser window.
